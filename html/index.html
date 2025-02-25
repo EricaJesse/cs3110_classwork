@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <script src="nothing.js"></script>
-  </head>
-  <body>
-    <h1>Hi</h1>
-    <select>
-      <option value="rick">rick</option>
-      <option value="clive">clive</option>
-      <option value="kristen">kristen</option>
-      <option value="steve">steve</option>
-    </select>
-    <script src="js.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive To-Do List</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<h2>New Tasks</h2>
+<form id="task-form">
+  <label for="task-input">Enter a new Task: </label>
+  <input type="text" id="task-input" placeholder="Enter a task" required>
+
+  <label for="task-date">Due Date: </label>
+  <input type="date" id="task-date" required>
+
+  <button type="submit">Add Task</button>
+</form>
+
+<h2>Filter Tasks</h2>
+<form id="filter-section">
+  <label for="filter-name">Filter by Name: </label>
+  <input type="text" id="filter-name" placeholder="Filter by task name">
+  <label for="filter-date">Filter by Due Date: </label>
+  <input type="date" id="filter-date">
+  <button id="filter-btn">Filter</button>
+  <button id="reset-btn">Reset</button>
+</form>
+
+<h2>Task List</h2>
+<ul id="task-list"></ul>
+
+<script src="./js.js"></script>
+</body>
 </html>

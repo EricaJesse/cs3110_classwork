@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scp html/* root@rickastley.mooo.com:/var/www/html/
-scp jsapp/* root@rickastley.mooo.com:/var/www/jsapp/
-ssh root@rickastley.mooo.com systemctl restart jsapp
+scp html/* root@litlog.crabdance.com:/var/www/html/
+scp jsapp/* root@litlog.crabdance.com:/var/www/jsapp/
+ssh root@litlog.crabdance.com systemctl restart jsapp
 

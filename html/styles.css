@@ -1,7 +1,195 @@
-body {
-  height: 100vh;
-  width: 100vw;
+:root {
+  --header: #32A1C8;
+  --background: #0A5064;
+  --text-primary: white;
+  --text-yellow: #FFDC85;
+  --text-green: #2FE0B3;
+  --text-pink: #F15F86;
 }
-img {
-  position: fixed;
+
+@media print {
+  :root {
+    --header: #3183A3;
+    --background: white;
+    --text-primary: black;
+    --text-yellow: #E5C273;
+    --text-green: #23B08E;
+    --text-pink: #D34A6C;
+  }
+
+  img {
+    display: none;
+  }
+
+  body {
+    padding: 10px !important;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  color: var(--text-yellow);
+  padding: 10px 30px;
+}
+
+h2 {
+  color: var(--header);
+}
+
+label {
+  color: var(--text-yellow);
+}
+
+form {
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px;
+  border: 1px solid var(--text-pink);
+  border-radius: 5px;
+}
+
+button {
+  background: var(--text-pink);
+  color: var(--text-primary);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #d34a6c;
+}
+
+/* Task List Container */
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 20px;
+}
+
+#to-do, #completed {
+  flex: 1;
+  min-width: 300px;
+}
+
+#to-do, #completed {
+  flex: 1;
+  padding: 10px;
+  background: var(--background);
+  border-radius: 8px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: var(--text-green);
+  color: black;
+}
+
+li button:first-of-type {
+  margin-left: auto;
+}
+
+li button {
+  margin-left: 10px;
+}
+
+li[draggable="true"] {
+  cursor: grab;
+}
+
+li[draggable="true"]:active {
+  cursor: grabbing;
+  opacity: 0.6;
+}
+
+#to-do-tasks,
+#completed-tasks {
+  min-height: 50px;
+  border: 2px dashed var(--text-pink);
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 10px 15px;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .list-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #to-do, #completed {
+    width: 100%;
+    min-width: unset;
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  li, #filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  li button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .list-container {
+    gap: 10px;
+  }
+
+  #to-do, #completed {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 1rem;
+  }
 }
