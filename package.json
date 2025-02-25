@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "http-server html -P http://localhost:3000",
+    "start-jsapp": "cd jsapp && nodemon index.js"
+  },
+
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "nodemon": "^3.1.9"
+  }
+}
